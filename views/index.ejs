@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Pokedex</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><img src="/img/pokebola.png" alt="Pokebola"></li>
+            <li><a href="/"></a><h1>Pokedex</h1></li>
+            <li><a href="#cadastro">Cadastrar</a></li>
+            <li><a href="#cards">Pokemons</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section id="cadastro">
+
+            <img src="/img/pokedex.png" alt="Pokedex">
+
+            <div>
+                <% if (pokemon==undefined) { %>
+                    <h2>Cadastre um novo Pokemon!</h2>
+
+                    <form action="/criar" method="POST">
+
+                        <label for="Nome">Nome:</label>
+                        <input type="text" id="Nome" name="Nome">
+
+                        <label for="Descricao">Descrição:</label>
+                        <input type="text" id="Descricao" name="Descricao">
+
+                        <label for="Tipo">Tipo:</label>
+                        <input type="text" id="Tipo" name="Tipo">
+
+                        <label for="Imagem">Link da Imagem</label>
+                        <input type="text" id="Imagem" name="Imagem">
+
+                        <button id="btnCadastrar" type="submit">Cadastrar</button>
+
+                    </form>
+                    <% } else { %>
+
+                        <h2>Atualização do Pokemon</h2>
+
+                        <form action="/atualizar/<%= pokemon.id %>" method="POST">
+
+                            <label for="Nome">Nome:</label>
+                            <input type="text" id="Nome" name="Nome" value="<%= pokemon.Nome %>">
+
+                            <label for="Descricao">Descrição:</label>
+                            <input type="text" id="Descricao" name="Descricao" value="<%= pokemon.Descricao %>">
+
+                            <label for="Tipo">Tipo:</label>
+                            <input type="text" id="Tipo" name="Tipo" value="<%= pokemon.Tipo %>">
+
+                            <label for="Imagem">Link da Imagem</label>
+                            <input type="text" id="Imagem" name="Imagem" value="<%= pokemon.Imagem %>">
+
+                            <label for="Peso">Peso Pokemon</label>
+                            <input type="text" id="Peso" name="Peso" value="<%= pokemon.Peso %>">
+
+                            <label for="Altura">Altura Pokemon</label>
+                            <input type="text" id="Altura" name="Altura" value="<%= pokemon.Altura %>">
+
+                            <label for="Habilidade">Habilidade</label>
+                            <input type="text" id="Habilidade" name="Habilidade" value=" <%= pokemon.Habilidade %>">
+
+                            <button id="btnAtualizar" type="submit">Atualizar</button>
+
+                        </form>
+                        <% } %>
+            </div>
+
+        </section>
+
+        <section id="cards">
+
+            <h2>Lista de Pokemons</h2>
+
+        <% pokedex.forEach((pokemon)=> { %>
+              <div class="card">
+                  <h3> <%= pokemon.Nome %> </h3>
+                  <img src="<%= pokemon.Imagem %>" alt="">
+                  <p class="Descricao">Descriçao: <%= pokemon.Descricao %> </p> <br>
+                  <p class="Tipo">Tipo: <%= pokemon.Tipo %> </p> 
+                  <a id="Detalhes" href="/detalhespokemon/<%= pokemon.id %>" >Detalhes do Pokemon</a>
+                  <a id="Editar" href="/detalhes/<%=pokemon.id %>">Editar</a>
+                  <!-- <a id="Apagar" href="/apagar/<%= pokemon.id %>">Apagar</a> -->
+              </div>
+              <% }) %>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Todos os direitos resevados para <a target="_blank" href="https://thicode.netlify.app/">Thi Code</a>  &copy;</p>
+        <p>Dados retirados de <a target="_blank" href="https://www.pokemon.com/br/pokedex/">Pokédex</a></p>
+    </footer>
+
+    
+</body>
+</html>

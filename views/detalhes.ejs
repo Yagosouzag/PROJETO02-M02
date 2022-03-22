@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/detalhes.css" type="text/css">
+    <title>Detalhes Pokemon</title>
+</head>
+<body>
+
+ <main>
+    
+    <header id="bannerpag2" class="bannerpg2">
+       <img src="/img/banner.png" alt="">
+    </header>
+
+    <section id='card'>
+
+        <h2> <%= pokemon.Nome %> </h2>
+        <img src="<%= pokemon.Imagem %>" alt="Imagem Pokemon">
+        <p class="descricao1"><%= pokemon.Descricao %> </p> <br>
+        <p>Tipo: <%= pokemon.Tipo %> </p> <br>
+        <p>Peso: <%= pokemon.Peso %> </p> <br>
+        <p>Altura: <%= pokemon.Altura %> </p> <br>
+        <p>Habilidade: <%= pokemon.Habilidade %> </p>
+
+    </section>
+
+ </main>
+
+ <footer>
+    <p>Todos os direitos resevados para YAGO GUIMARAES &copy; </p> <br>
+    <p>  Dados retirados de <a target="_blank" href="https://www.pokemon.com/br/pokedex/">Pokédex</a></p> <br>
+</footer>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, Arial;
+  scroll-behavior: smooth;
+}
+
+main {
+  background-image: url("https://www.avimortecidos.com.br/static/6370/sku/tecidos-para-decoracao-tecido-poliester-estampado-pokemon-fundo-marinho-poke001--p-1594153928812.jpg");
+  width: 100%;
+}
+
+
+header img {
+  width: 60%;
+  margin: 2rem 25rem 0 25rem;
+}
+
+
+section#card  {
+  width: 30rem;
+  box-shadow: 10px 10px 10px 10px #161a14;
+  padding: 1rem;
+  margin: 0 50rem .1rem  50rem;
+  background-color: #ddec00;
+  font-size: 1rem;
+}
+
+section#card h2 {
+  width: 100%;
+  text-align: center;
+}
+
+section#card img {
+  width: 100%;
+}
+
+section#card p.descricao {
+  margin-bottom: 1rem;
+}
+
+
+footer {
+  background-color: #0077ff;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
